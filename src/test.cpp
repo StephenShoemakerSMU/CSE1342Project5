@@ -1,13 +1,14 @@
 #include "Book.h"
+#include "ShelfLinkedList.h"
 #include <iostream>
 
 int main(){
-  Book book1;
-  Book book2("Storm Front", "Jim", "Butcher", 100, 50, 200);
-  book1.display();
-  book2.display();
-  book2.loan("Stephen", "Shoemaker", 11,11,11);
-  book2.display();
-  book2.returnBook();
-  book2.display();
+  Book book1("A Game Of Thrones", "Goerge", "Martin", 100,100,500);
+  Book book2("Clash of Kings", "Goerge", "Martin", 110,110, 400);
+  Book book3("A Storm of Sword", "Goerge", "Martin", 400,400, 600);
+  ShelfLinkedList shelf;
+  shelf.add(book1);
+  shelf.add(book2);
+  shelf.add(book3);
+  shelf.display();
 }
