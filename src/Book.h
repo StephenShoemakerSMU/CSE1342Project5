@@ -36,6 +36,9 @@ class Book{
     string toStringOnLoan();
 
     string returnDateAsString();
+
+    //clears returnDates when book is returned
+    void clearReturnDates();
   public:
     Book();
     Book(string ,string ,string, int, int , int );

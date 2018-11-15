@@ -279,5 +279,39 @@ string Book::toStringOnShelf(){
 //No arguments
 //This function returns a string based on the date for it being on loan
 string Book::toStringOnLoan(){
-  return "Placeholder Fill Me";
+  return bookName + " borrowed by " + borrowerFName + " " + borrowerLName;
+}
+
+
+//return and loan functions
+
+//Stephen Shoemaker
+//Takes borrower name and return date
+//loans out the book and stores its return date
+//returns nothing
+void Book::loan(string fName, string lName, int month, int day, int year){
+  onLoan = true;//The book is now loaned out
+  cout << "Loaning out " + bookName + " to " + fName + " " + lName << endl;
+  borrowerFName = fName;
+  borrowerLName = lName;
+  returnMonth = month;
+  returnDay = day;
+  returnYear = year;
+}
+
+//Stephen Shoemaker
+//Returns Book
+//No arguments
+//Returns Nothing
+void Book::returnBook(){
+  onLoan = false;
+  borrowerFName = "THIS BOOK HAS BEEN RETURNED";
+  borrowerLName = "THIS BOOK HAS BEEN RETURNED";
+  clearReturnDates();
+}
+
+void Book::clearReturnDates(){
+  returnMonth = 0;
+  returnDay = 0;
+  returnYear = 0;
 }
