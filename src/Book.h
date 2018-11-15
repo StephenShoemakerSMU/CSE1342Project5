@@ -10,16 +10,34 @@
 using namespace std;
 class Book{
   private:
+
+    //all books have these
     string bookName;
     string authorFName;
     string authorLName;
     int width;
     int height;
     int pages;
+
+
+    //fill these if on loan
+    bool onLoan;
+    string borrowerLName;
+    string borrowerFName;
+    int returnDay;
+    int returnMonth;
+    int returnYear;
+
+    //different output depending if onLoan or not
+    string toStringOnShelf();
+    string toStringOnLoan();
+
+    string returnDateAsString();
   public:
     Book();
     Book(string ,string ,string, int, int , int );
 
+    //getters and setters for all books
     string getBookName();
     string getAuthorFName();
     string getAuthorLName();
@@ -35,9 +53,29 @@ class Book{
     void setLength(int);
     void setPages(int);
 
+    //getters and setters for books on loan
+    bool isOnLoan();
+    string getBorrowerLName();
+    string getBorrowerFName();
+    string getDateOfReturn();
+    int getDayOfReturn();
+    int getMonthOfReturn();
+    int getYearOfReturn();
+
+    void setIsOnLoan(bool);
+    void setBorrowerLName(string);
+    void setBorrowerFName(string);
+    void setDayOfReturn(int);
+    void setMonthOfReturn(int);
+    void setYearOfReturn(int);
+    void setDateOfReturn(string)
+
+
     void display();
 
     string toString();
+
+
 
 };
 

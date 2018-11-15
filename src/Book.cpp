@@ -7,9 +7,9 @@ Book::Book(){
   bookName = "";
   authorFName = "";
   authorLName = "";
-  //width = 0;
-  //height = 0;
-  //pages = 0;
+  width = 0;
+  height = 0;
+  pages = 0;
 }
 
 Book::Book(string initialBookName, string initialAuthorFName, string initialAuthorLName, int initialWidth, int initialHeight, int initialPages){
