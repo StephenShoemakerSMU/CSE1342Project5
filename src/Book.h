@@ -1,7 +1,10 @@
 //Stephen Shoemaker
-//Book class Header
+//Book.h
+//CSE 1342 Project 5
+//11/15/18
 //This class is to represent books on a shelf in a library database
 //It will contain size, name, author name, and pages
+//Also will store loan information such as borrower name and return date
 
 #ifndef BOOK
 #define BOOK
@@ -20,7 +23,7 @@ class Book{
     int pages;
 
 
-    //fill these if on loan
+    //This is the data that is stored if the book is on Loan
     bool onLoan;
     string borrowerLName;
     string borrowerFName;
@@ -51,6 +54,7 @@ class Book{
     void setAuthorLName(string);
     void setWidth(int);
     void setLength(int);
+    void setWidthAndLength(int,int)
     void setPages(int);
 
     //getters and setters for books on loan
@@ -68,14 +72,19 @@ class Book{
     void setDayOfReturn(int);
     void setMonthOfReturn(int);
     void setYearOfReturn(int);
-    void setDateOfReturn(string)
+    
 
-
+    //outputs the toString to console
     void display();
 
+    //returns the toString depending if the books on loan or on shelf
     string toString();
 
+    //sets onLoan to false and clears the values for if onLoan
+    void return();
 
+    //Loans a book out to a certain person
+    void loan(string, string, int, int, int);
 
 };
 
