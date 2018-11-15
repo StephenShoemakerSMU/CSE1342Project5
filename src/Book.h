@@ -53,8 +53,8 @@ class Book{
     void setAuthorFName(string);
     void setAuthorLName(string);
     void setWidth(int);
-    void setLength(int);
-    void setWidthAndLength(int,int)
+    void setHeight  (int);
+    void setWidthAndLength(int,int);
     void setPages(int);
 
     //getters and setters for books on loan
@@ -72,7 +72,7 @@ class Book{
     void setDayOfReturn(int);
     void setMonthOfReturn(int);
     void setYearOfReturn(int);
-    
+
 
     //outputs the toString to console
     void display();
@@ -81,7 +81,7 @@ class Book{
     string toString();
 
     //sets onLoan to false and clears the values for if onLoan
-    void return();
+    void returnBook();
 
     //Loans a book out to a certain person
     void loan(string, string, int, int, int);

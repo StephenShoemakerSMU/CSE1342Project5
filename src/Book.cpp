@@ -73,15 +73,15 @@ int Book::getWidth(){
 //Stephen Shoemaker
 //takes no arguments
 //returns height
-int Book::getLength(){
-  return length;
+int Book::getHeight(){
+  return height;
 }
 
 //Stephen Shoemaker
 //takes no arguments
 //calculates and returns area
 int Book::getArea(){
-  return width*length;
+  return width * height;
 }
 
 //Stephen Shoemaker
@@ -89,7 +89,7 @@ int Book::getArea(){
 //sets book name to parameter
 //returns nothing
 void Book::setBookName(string newBookName){
-  bookNAme = newBookName;
+  bookName = newBookName;
 }
 
 //Stephen Shoemaker
@@ -104,7 +104,7 @@ void Book::setAuthorFName(string newAuthorFName){
 //sets authorLName to parameter
 //returns nothing
 void Book::setAuthorLName(string newAuthorLName){
-  authorLNAme = newAuthorLName;
+  authorLName = newAuthorLName;
 }
 
 //Stephen Shoemaker
@@ -204,7 +204,7 @@ void Book::setIsOnLoan(bool newLoanValue){
 //sets borrowerLName to argument
 //returns nothing
 void Book::setBorrowerLName(string newBorrowerLName){
-  borrowerLname = newBorrowerLName;
+  borrowerLName = newBorrowerLName;
 }
 
 //Stephen Shoemaker
@@ -220,7 +220,7 @@ void Book::setBorrowerFName(string newBorrowerFName){
 //sets dayOfReturn to argument
 //returns nothing
 void Book::setDayOfReturn(int newDay){
-  dayOfReturn = newDay;
+  returnDay = newDay;
 }
 
 //Stephen Shoemaker
@@ -228,7 +228,7 @@ void Book::setDayOfReturn(int newDay){
 //sets monthOfReturn to argument
 //returns nothing
 void Book::setMonthOfReturn(int newMonth){
-  monthOfReturn = newMonth;
+  returnMonth = newMonth;
 }
 
 //Stephen Shoemaker
@@ -236,7 +236,7 @@ void Book::setMonthOfReturn(int newMonth){
 //sets yearOfReturn to argument
 //returns nothing
 void Book::setYearOfReturn(int newYear){
-  yearOfReturn = newYear;
+  returnYear = newYear;
 }
 
 //END OF GETTERS AND SETTERS
@@ -273,4 +273,11 @@ string Book::toStringOnShelf(){
   return bookName + " by " + authorFName + " " + authorLName +
           " ( " + to_string(width) + "x" + to_string(height) +
           " " + to_string(pages) + " p)";
+}
+
+//Stephen Shoemaker
+//No arguments
+//This function returns a string based on the date for it being on loan
+string Book::toStringOnLoan(){
+  return "Placeholder Fill Me";
 }
