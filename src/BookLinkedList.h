@@ -6,12 +6,12 @@
 class BookLinkedList{
     protected:
     BookNode* headNode;
+    virtual bool compareBooks(Book, Book);
     public:
     BookLinkedList();
     BookLinkedList(Book);
     void add(Book);
     void display();
-    virtual bool compareBooks(Book, Book);
     bool containsBook(string);
 };
 
