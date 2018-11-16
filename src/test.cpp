@@ -1,6 +1,5 @@
 #include "Book.h"
-#include "BookLinkedList.h"
-#include "Shelf.h"
+#include "Library.h"
 //#include "Loan.h"
 #include <iostream>
 
@@ -9,19 +8,18 @@ int main(){
   Book book2("Clash of Kings", "Goerge", "Martin", 110,110, 400);
   Book book3("A Storm of Sword", "Goerge", "Martin", 400,400, 600);
   Book book4("APPLES", "Steve", "Shoemaker", 50, 200, 600);
-  Shelf shelf;
-  shelf.add(book3);
-  shelf.add(book2);
-  shelf.add(book1);
-  shelf.add(book4);
-  shelf.display();
+  Library smithsonian;
+  smithsonian.addBook(book3);
+  smithsonian.addBook(book2);
+  smithsonian.addBook(book1);
+  smithsonian.addBook(book4);
+  smithsonian.displayLibrary();
 
-  cout << "Shelf Contains Apples: " << shelf.containsBook("APPLES") << endl;
 
   cout << endl << "Loaning out APPLES" << endl;
 
-  shelf.loanOut("APPLES");
-  shelf.display();
+  smithsonian.checkOutBook("APPLES", "Steve", "Shoemaker", 10, 20, 80);
+  smithsonian.displayLibrary();
 
-  cout << "Shelf Contains Apples: " << shelf.containsBook("APPLES");
+  //cout << "Shelf Contains Apples: " << shelf.containsBook("APPLES");
 }

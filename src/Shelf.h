@@ -6,7 +6,7 @@
 class Shelf : public BookLinkedList{
   public:
     bool compareBooks(Book, Book);
-    BookNode* loanOut(string);
+    Book loanOut(string);
 };
 
 #endif
