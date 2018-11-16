@@ -85,6 +85,13 @@ int Book::getArea(){
 }
 
 //Stephen Shoemaker
+//takes no arguments
+//returns pages
+int Book::getPages(){
+  return pages;
+}
+
+//Stephen Shoemaker
 //Takes String arguments
 //sets book name to parameter
 //returns nothing
