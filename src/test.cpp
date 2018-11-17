@@ -16,9 +16,10 @@ int main(){
   smithsonian.displayLibrary();
 
 
-  cout << endl << "Loaning out APPLES" << endl;
 
   smithsonian.checkOutBook("APPLES", "Steve", "Shoemaker", 10, 20, 80);
+  smithsonian.checkOutBook("A Game Of Thrones", "Steve", "Shoemaker",10,20,80);
+
   smithsonian.displayLibrary();
 
   //cout << "Shelf Contains Apples: " << shelf.containsBook("APPLES");

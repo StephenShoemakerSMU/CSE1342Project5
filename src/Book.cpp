@@ -298,7 +298,7 @@ string Book::toStringOnLoan(){
 //returns nothing
 void Book::loan(string fName, string lName, int month, int day, int year){
   onLoan = true;//The book is now loaned out
-  cout << "Loaning out " + bookName + " to " + fName + " " + lName << endl;
+  //cout << "Loaning out " + bookName + " to " + fName + " " + lName << endl;
   borrowerFName = fName;
   borrowerLName = lName;
   returnMonth = month;
@@ -312,8 +312,8 @@ void Book::loan(string fName, string lName, int month, int day, int year){
 //Returns Nothing
 void Book::returnBook(){
   onLoan = false;
-  borrowerFName = "THIS BOOK HAS BEEN RETURNED";
-  borrowerLName = "THIS BOOK HAS BEEN RETURNED";
+  //borrowerFName = "THIS BOOK HAS BEEN RETURNED";
+  //borrowerLName = "THIS BOOK HAS BEEN RETURNED";
   clearReturnDates();
 }
 

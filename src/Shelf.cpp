@@ -20,8 +20,8 @@ bool Shelf::compareBooks(Book book1, Book book2){
 
 //Stephen Shoemaker
 //Takes string parameter as book name
-//Returns a pointer to the book if it in the list and removes it from the list
-//Will print out NOT IN LIBRARY if the book is not on the shelf
+//Only works if book is in list
+//Returns the book if it in the list and removes it from the list
 Book Shelf::loanOut(string bName){
   //checking if the the first node has the same name as the book
   if(headNode->getBook().getBookName() == bName){

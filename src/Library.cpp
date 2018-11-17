@@ -12,11 +12,13 @@ void Library::addBook(Book newBook){
 void Library::displayLibrary(){
   cout << "Shelf Contents:" << endl;
   shelf.display();
+
+  cout << "Loan Contents: " << endl;
+  loan.display();
 }
 
 void Library::checkOutBook(string bookName, string borrowerFName, string borrowerLName, int returnMonth, int returnDay, int returnYear){
   Book bookLoaned = shelf.loanOut(bookName);
-  std::cout << "Loaned out: " << bookLoaned.toString() << std::endl;
-  std::cout << "Shelf Contents: " << std::endl;
-  shelf.display();
+  bookLoaned.loan(borrowerFName,borrowerLName,returnMonth, returnDay, returnYear);
+  loan.add(bookLoaned);
 }
