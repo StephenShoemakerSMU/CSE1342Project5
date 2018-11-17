@@ -4,11 +4,12 @@
 //11/15/18
 //This code is the definitions for the Book class
 //The book class stores data for books either on loan or on shelf
+//Also stores the proper output depending on if its loaned or not
+
 #include "Book.h"
 #include <stdio.h>
 #include <iostream>
-//#include <string.h>
-//#include <string>
+
 using namespace std;
 
 //Public class functions for books not on loan
@@ -173,6 +174,7 @@ string Book::getBorrowerLName(){
 //Stephen Shoemaker
 //takes no arguments
 //returns the string value of date of return
+//Function is now deprecated, only call if you don't want leading zeroes
 string Book::getDateOfReturn(){
   return to_string(returnMonth) + "/" + to_string(returnDay) + "/" + to_string(returnYear);
 }
@@ -262,6 +264,7 @@ void Book::display(){
 //takes no arguments
 //This function returns the appropriate string based on wether the book is onLoan or not
 string Book::toString(){
+  //this if-else statment returns the toString that corresponds to the onLoan variable
   if(onLoan){
     return toStringOnLoan();
   }
@@ -269,6 +272,7 @@ string Book::toString(){
     return toStringOnShelf();
   }
 
+  //If this is reached, take cover
   cout << "in Book::toString and reached end of toString" << endl;
   return "ERROR: REACHED END OF TOSTRING";
 }
@@ -277,9 +281,11 @@ string Book::toString(){
 //No arguments
 //This function returns a string based on the data for it being on the shelf
 string Book::toStringOnShelf(){
+
+//      <bookName> by <fName> <lName> (<width> x <height> <pages> p)
   return bookName + " by " + authorFName + " " + authorLName +
-          " ( " + to_string(width) + "x" + to_string(height) +
-          " " + to_string(pages) + " p)";
+          " (" + to_string(width) + "x" + to_string(height) +
+          " " + to_string(pages) + "p)";
 }
 
 //Stephen Shoemaker
@@ -298,7 +304,8 @@ string Book::toStringOnLoan(){
 //returns nothing
 void Book::loan(string fName, string lName, int month, int day, int year){
   onLoan = true;//The book is now loaned out
-  //cout << "Loaning out " + bookName + " to " + fName + " " + lName << endl;
+
+  //setting the loan data
   borrowerFName = fName;
   borrowerLName = lName;
   returnMonth = month;
@@ -311,20 +318,29 @@ void Book::loan(string fName, string lName, int month, int day, int year){
 //No arguments
 //Returns Nothing
 void Book::returnBook(){
-  onLoan = false;
-  borrowerFName = "THIS BOOK HAS BEEN RETURNED";
-  borrowerLName = "THIS BOOK HAS BEEN RETURNED";
+  onLoan = false;//setting loan to false
+  borrowerFName = "ERROR: THIS BOOK HAS BEEN RETURNED"; //these should not be seen
+  borrowerLName = "ERROR: THIS BOOK HAS BEEN RETURNED";
   clearReturnDates();
 }
 
+//Stephen Shoemaker
+//No arguments
+//helper function for return Book to clear return data
+//returns nothing
 void Book::clearReturnDates(){
   returnMonth = 0;
   returnDay = 0;
   returnYear = 0;
 }
 
+//Stephen Shoemaker
+//No arguments
+//his function returns the return dates and is formatted
+//with leading zeros
 string Book::dateToString(){
   string output = "";
+  //this if chain adds leading zeroes if the date number is single digit
   if(returnMonth < 10){
     output += "0";
   }
@@ -339,3 +355,5 @@ string Book::dateToString(){
   output += to_string(returnYear);
   return output;
 }
+
+//end book.cpp

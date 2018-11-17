@@ -1,4 +1,13 @@
+//Stephen Shoemaker
+//Shelf.cpp
+//CSE 1342 Program 5
+//11/15/18
+//BookLinkedList subclass to resemble a linked list of books on shelf
+//Is sorted by size
+//Displayed by size
+
 #include "Shelf.h"
+
 //Stephen Shoemaker
 //Takes Two books parameters
 //Returns true if the first book goes before the second book by following Conditions
@@ -16,7 +25,6 @@ bool Shelf::compareBooks(Book book1, Book book2){
   }
   return false;
 }
-
 
 //Stephen Shoemaker
 //Takes string parameter as book name
@@ -39,5 +47,4 @@ Book Shelf::loanOut(string bName){
   BookNode* output = currNode->getNextNode();
   currNode->setNextNode(currNode->getNextNode()->getNextNode());
   return output->getBook();
-
 }

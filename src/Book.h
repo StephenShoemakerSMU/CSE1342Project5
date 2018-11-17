@@ -24,7 +24,7 @@ class Book{
 
 
     //This is the data that is stored if the book is on Loan
-    bool onLoan;
+    bool onLoan; //this variable is essential for determining Book behavior
     string borrowerLName;
     string borrowerFName;
     int returnDay;
@@ -35,12 +35,12 @@ class Book{
     string toStringOnShelf();
     string toStringOnLoan();
 
-    //string returnDateAsString();
-
     //clears returnDates when book is returned
+    //helpre function for returnBook()
     void clearReturnDates();
   public:
     Book();
+    //constructor for book name, author name, and date
     Book(string ,string ,string, int, int , int );
 
     //getters and setters for all books
