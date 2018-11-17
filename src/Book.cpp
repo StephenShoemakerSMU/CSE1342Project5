@@ -312,8 +312,8 @@ void Book::loan(string fName, string lName, int month, int day, int year){
 //Returns Nothing
 void Book::returnBook(){
   onLoan = false;
-  //borrowerFName = "THIS BOOK HAS BEEN RETURNED";
-  //borrowerLName = "THIS BOOK HAS BEEN RETURNED";
+  borrowerFName = "THIS BOOK HAS BEEN RETURNED";
+  borrowerLName = "THIS BOOK HAS BEEN RETURNED";
   clearReturnDates();
 }
 

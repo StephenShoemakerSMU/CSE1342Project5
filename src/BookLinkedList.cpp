@@ -1,5 +1,5 @@
 #include "BookLinkedList.h"
-#include <iostream>
+
 
 //Stephen Shoeamker
 //Zero-Arg Constructor
@@ -89,4 +89,11 @@ int BookLinkedList::bookCount(){
     curr= curr->getNextNode();
   }
   return output;
+}
+
+void BookLinkedList::produceTextFile(string fileName){
+  ofstream outputFile;
+  outputFile.open(fileName);
+  outputFile << toString();
+  outputFile.close();
 }

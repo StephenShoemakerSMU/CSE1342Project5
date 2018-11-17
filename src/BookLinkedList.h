@@ -3,6 +3,9 @@
 
 #include "BookNode.h"
 #include "Book.h"
+#include <iostream>
+#include <string>
+#include <fstream>
 class BookLinkedList{
     protected:
     BookNode* headNode;
@@ -16,6 +19,7 @@ class BookLinkedList{
     bool containsBook(string);
     bool isEmpty(){return headNode == nullptr;};
     int bookCount();
+    void produceTextFile(string);
 };
 
 #endif

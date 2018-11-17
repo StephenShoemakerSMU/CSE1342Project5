@@ -15,7 +15,7 @@ bool Loan::compareBooks(Book book1, Book book2){
     return book1.getMonthOfReturn() < book2.getMonthOfReturn();
   }
   if(book1.getDayOfReturn() != book2.getDayOfReturn()){
-    return book1.getDayOfReturn() != book2.getDayOfReturn();
+    return book1.getDayOfReturn() < book2.getDayOfReturn();
   }
   return false;
 }
