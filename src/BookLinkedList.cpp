@@ -43,11 +43,7 @@ void BookLinkedList::add(Book newBook)
 //Takes no paramters
 //Displays the content of the list
 void BookLinkedList::display(){
-  BookNode * curr = headNode;
-  while(curr!=nullptr){
-    curr->getBook().display();
-    curr = curr->getNextNode();
-  }
+  cout << toString();
 }
 
 //Stephen Shoemaker
@@ -70,4 +66,27 @@ bool BookLinkedList::containsBook(string bookName){
     curr= curr->getNextNode();
   }
   return false;
+}
+
+string BookLinkedList::toString(){
+  BookNode * curr = headNode;
+  string output = to_string(bookCount()) + "\n";
+  int bookCount = 1;
+  while(curr!=nullptr){
+    output += to_string(bookCount) + ". " + curr->getBook().toString();
+    output += "\n";
+    bookCount++;
+    curr = curr->getNextNode();
+  }
+  return output;
+}
+
+int BookLinkedList::bookCount(){
+  int output = 0;
+  BookNode* curr = headNode;
+  while(curr != nullptr){
+    output++;
+    curr= curr->getNextNode();
+  }
+  return output;
 }

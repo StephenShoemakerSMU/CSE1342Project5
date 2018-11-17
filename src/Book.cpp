@@ -322,3 +322,20 @@ void Book::clearReturnDates(){
   returnDay = 0;
   returnYear = 0;
 }
+
+string Book::dateToString(){
+  string output = "";
+  if(returnMonth < 10){
+    output += "0";
+  }
+  output += to_string(returnMonth) + "/";
+  if(returnDay < 10){
+    output += "0";
+  }
+  output+= to_string(returnDay) + "/";
+  if(returnYear < 10){
+    output += "0";
+  }
+  output += to_string(returnYear);
+  return output;
+}

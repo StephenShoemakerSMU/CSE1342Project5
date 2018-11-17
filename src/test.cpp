@@ -13,12 +13,13 @@ int main(){
   smithsonian.addBook(book2);
   smithsonian.addBook(book1);
   smithsonian.addBook(book4);
-  smithsonian.displayLibrary();
+  //smithsonian.displayLibrary();
 
 
 
   smithsonian.checkOutBook("APPLES", "Steve", "Shoemaker", 10, 20, 80);
-  smithsonian.checkOutBook("A Game Of Thrones", "Steve", "Shoemaker",10,20,80);
+  smithsonian.checkOutBook("A Game Of Thrones", "Steve", "Shoemaker",10,10,80);
+  //smithsonian.checkOutBook("APPLES", "Bob", "Bobinson", 10,50,60);
 
   smithsonian.displayLibrary();
 

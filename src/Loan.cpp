@@ -42,3 +42,20 @@ Book Loan::returnBook(string bName){
   currNode->setNextNode(currNode->getNextNode()->getNextNode());
   return output->getBook();
 }
+
+string Loan::toString(){
+  string currDate = "";
+  BookNode * curr = headNode;
+  string output = to_string(bookCount()) + "\n";
+  int bookCount = 1;
+  while(curr != nullptr){
+    if(currDate != curr->getBook().dateToString()){
+      currDate = curr->getBook().dateToString();
+      output += currDate + "\n";
+    }
+    output += to_string(bookCount) + ". " + curr->getBook().toString() + "\n";
+    bookCount++;
+    curr = curr->getNextNode();
+  }
+  return output;
+}

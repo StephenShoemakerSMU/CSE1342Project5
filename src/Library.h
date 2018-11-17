@@ -10,7 +10,6 @@ class Library{
     Shelf shelf;
     Loan loan;
   public:
-    Library();
     void displayLibrary();
     void addBook(Book);
                   //bookName Fname LName Month Day Year

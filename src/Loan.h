@@ -7,7 +7,7 @@ class Loan : public BookLinkedList{
   public:
     bool compareBooks(Book, Book);
     Book returnBook(string);
-
+    string toString();
 };
 
 #endif

@@ -12,7 +12,10 @@ class BookLinkedList{
     BookLinkedList(Book);
     void add(Book);
     void display();
+    virtual string toString();
     bool containsBook(string);
+    bool isEmpty(){return headNode == nullptr;};
+    int bookCount();
 };
 
 #endif

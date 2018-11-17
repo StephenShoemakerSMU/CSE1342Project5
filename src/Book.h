@@ -35,7 +35,7 @@ class Book{
     string toStringOnShelf();
     string toStringOnLoan();
 
-    string returnDateAsString();
+    //string returnDateAsString();
 
     //clears returnDates when book is returned
     void clearReturnDates();
@@ -82,6 +82,9 @@ class Book{
 
     //returns the toString depending if the books on loan or on shelf
     string toString();
+
+    //returns the date as a string
+    string dateToString();
 
     //sets onLoan to false and clears the values for if onLoan
     void returnBook();
